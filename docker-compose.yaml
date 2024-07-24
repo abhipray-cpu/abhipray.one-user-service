@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=userDB'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=myuser'
+    ports:
+      - '5432'
+
+  redis:
+    image: 'redis:latest'
+    command: redis-server --requirepass redispassword
+    ports:
+      - '6379:6379'
+
